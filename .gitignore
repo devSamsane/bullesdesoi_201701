@@ -1,0 +1,52 @@
+# IntelliJ project files
+.idea
+out
+gen
+
+# OS
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Node and related ecosystem
+.nodemonignore
+.sass-cache/
+node_modules/
+public/lib/
+app/tests/coverage/
+.bower-*/
+coverage/
+.coveralls.yml
+
+# MEAN.js app and assets
+public/dist/
+uploads
+modules/users/client/img/profile/uploads
+config/env/local.js
+config/env/local-*.js
+*.pem
+
+# Ignoring MEAN.JS's gh-pages branch for documenation
+_site/
+
+# General
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.tmp
+*.bak
+*.swp
+*.tasks
+logs/
+build/
+
+# Visual Studio
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.vscode/
