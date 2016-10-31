@@ -1,0 +1,78 @@
+<div layout="row" ng-controller="HeaderController as vm">
+    <md-sidenav class="md-sidenav-left bds-sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <header class="bds-menu--nav-header">
+            <a ui-sref="home" class="bds-menu--nav-logo">
+                <img src="modules/core/client/img/logos/logo-bullesdesoi-dp-500.png" alt="/">
+                <h1 class="bds-menu--nav-logotype md-headline">{{ title }}</h1>
+            </a>
+        </header>
+        <ul class="bds-skip-links">
+            <li class="md-whiteframe-z2">
+                <md-button ng-click="focusMainContent($event)" ui-sref="home">Aller au contenu</md-button>
+            </li>
+        </ul>
+        <md-content flex role="navigation">
+            <ul class="bds-menu">
+                <li ng-repeat="section in menuSidenav.sections" class="parent-list--item {{ section.className || '' }}" ng-class="{'parentActive' : isSectionSelected(section)}">
+                    <h2 class="bds-menu--heading md-headline" ng-if="section.type === 'heading'" id="heading_{{ section.name || nospace }}">{{ section.name }}</h2>
+                    <menu-link section="section" ng-if="section.type === 'link' && !section.hidden"></menu-link>
+                    <menu-toggle section="section" ng-if="section.type === 'toggle' && !section.hidden"></menu-toggle>
+                    <ul class="menu-nested-list" ng-if="section.children">
+                        <li ng-class="{'childActive' : isSectionSelected(child)}" ng-repeat="child in section.children">
+                            <menu-link section="child" ng-if="child.type === 'link'"></menu-link>
+                            <menu-toggle section="child" ng-if="child.type === 'toggle'"></menu-toggle>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </md-content>
+    </md-sidenav>
+    <md-toolbar layout="row" class="md-primary md-hue-2">
+        <div class="md-toolbar-tools">
+            <md-button aria-label="sidenav" ng-click="openMenu()" class="md-icon-button" hide-gt-md>
+                <md-icon md-svg-icon="navigation:ic_menu_24px" style="fill: #EDE7F6"></md-icon>
+            </md-button>
+            <div layout="row" flex class="fill-height">
+                <h2 class="md-breadcrumb">
+                    <span ng-if="menuSidenav.currentPage.name !== menuSidenav.currentSection.name">
+                        <span hide-xs>{{ menuSidenav.currentSection.name }}</span>
+                        <span hide-xs class="bds-menu--separator-icon" style="transform: translate3d(0, 1px, 0)">
+                            <span class="md-visually-hidden">-</span>
+                            <md-icon aria-hidden="true" md-svg-icon="navigation:ic_chevron_24px" style="margin-top: -2px;"></md-icon>
+                        </span>
+                    </span>
+                    <span class="md-breadcrumb--page">{{ menuSidenav.currentPage | humanizeDoc }}</span>
+                </h2>
+                <span flex></span>
+                <div layout="row">
+                    <md-menu md-position-mode="target-right target">
+                        <md-button class="md-icon-button" aria-label="signin" ng-click="$mdMenu.open()">
+                            <md-icon md-svg-icon="social:ic_person_24px" ng-class="{'bds-icon--accent' : isDisabled}"></md-icon>
+                        </md-button>
+                        <md-menu-content width="4" class="bds-accountMenu--settings">
+                            <md-menu-item ng-repeat="item in vm.accountMenu.items" ui-sref-active="active" ng-if="!isDisabled">
+                                <md-button ng-click="" ng-disabled="isDisabled" aria-label="menu utilisateur">
+                                    <div layout="row" flex>
+                                        <p flex ui-sref="{{ item.state }}" class="bds-accountMenu--item">{{ item.title }}</p>
+                                    </div>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-divider ng-if="!isDisabled"></md-menu-divider>
+                            <md-menu-item ui-sref-active="active" ng-if="!isDisabled">
+                                <md-button ng-click="" ng-disabled="isDisabled" aria-label="prendre rdv">
+                                    <p flex ui-sref="rdv" class="bds-accountMenu--item">Prendre rendez-vous</p>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-divider ng-if="!isDisabled"></md-menu-divider>
+                            <md-menu-item ui-sref-active="active">
+                                <md-button ng-click="" aria-label="session utilisateur">
+                                    <p flex ui-sref="{{ isSigninRefUrl }}" class="bds-accountMenu--item">{{ isSigninRefLabel }}</p>
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </div>
+            </div>
+        </div>
+    </md-toolbar>
+</div>
