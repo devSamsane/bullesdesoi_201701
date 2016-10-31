@@ -1,0 +1,19 @@
+{{ !< layout }}
+
+{{ #contentFor 'content' }}
+<h1>error 500</h1>
+<md-card class="md-warn">
+    <md-card-title>
+        <md-card-title-media>
+            <div class="md-media-sm card-media" layout >
+                <md-icon md-svg-icon="action:ic_report_problem_24px"></md-icon>
+            </div>
+        </md-card-title-media>
+        <md-card-title-text>
+            <span class="md-headline">Erreur</span>
+            <span class="md-subhead">Erreur interne du serveur : 500</span>
+            <span>{{ error }}</span>
+        </md-card-title-text>
+    </md-card-title>
+</md-card>
+{{ /content }}
