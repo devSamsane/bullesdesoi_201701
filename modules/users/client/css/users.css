@@ -1,0 +1,9 @@
+.bds-profile-picture {
+  max-height: 150px;
+  min-height: 150px;
+}
+
+.bds-loginbox {
+  max-width: 90%;
+  width: 500px;
+}
