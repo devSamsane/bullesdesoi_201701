@@ -1,0 +1,30 @@
+<div ng-controller="HeaderController as vm">
+    <md-sidenav class="md-sidenav-left bds-sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <header class="bds-menu--nav-header">
+            <a ui-sref="home" class="bds-menu--nav-logo">
+                <img src="modules/core/client/img/logos/logo-bullesdeSoi-DP500.png" alt="/">
+                <h1 class="bds-menu--nav-logotype md-headline">{{ title }}</h1>
+            </a>
+        </header>
+        <!--<ul class="bds-skip-links">
+            <li class="md-whiteframe-z2">
+                <md-button ng-click="focusMainContent($event)" ui-sref="home">Aller au contenu</md-button>
+            </li>
+        </ul>-->
+        <md-content flex role="navigation">
+            <ul class="bds-menu">
+                <li ng-repeat="section in menuSidenav.sections" class="parent-list--item {{ section.className || '' }}" ng-class="{'parentActive' : isSectionSelected(section)}">
+                    <h2 class="bds-menu--heading md-headline" ng-if="section.type === 'heading'" id="heading_{{ section.name || nospace }}">{{ section.name }}</h2>
+                    <menu-link section="section" ng-if="section.type === 'link' && !section.hidden"></menu-link>
+                    <menu-toggle section="section" ng-if="section.type === 'toggle' && !section.hidden"></menu-toggle>
+                    <ul class="menu-nested-list" ng-if="section.children">
+                        <li ng-class="{'childActive' : isSectionSelected(child)}" ng-repeat="child in section.children">
+                            <menu-link section="child" ng-if="child.type === 'link'"></menu-link>
+                            <menu-toggle section="child" ng-if="child.type === 'toggle'"></menu-toggle>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </md-content>
+    </md-sidenav>
+    </div>
