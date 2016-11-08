@@ -67,7 +67,7 @@
       }
 
       // Effectively call Oauth authentication route
-      $window.$location.href = url;
+      $window.location.href = url;
     }
 
     // Authentication callbacks
