@@ -20,7 +20,7 @@
     "install": "^1.0.4",
     "angular-scroll": "^1.0.0",
     "material-design-icons": "latest",
-    "angular-ui-router": "~0.2.18",
+    "angular-ui-router": "~1.0.0",
     "angular-file-upload": "^2.2.0",
     "angular-simple-logger": "^0.1.7"
   }
