@@ -58,8 +58,8 @@ module.exports = {
     }
   },
   facebook: {
-    clientID: process.env.FACEBOOK_ID || 'APP_ID',
-    clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
+    clientID: process.env.FACEBOOK_ID || '768552639951695',
+    clientSecret: process.env.FACEBOOK_SECRET || '37947b14889e39f5ed24b774dd0c0af5',
     callbackURL: '/api/auth/facebook/callback'
   },
   twitter: {
@@ -85,7 +85,7 @@ module.exports = {
     sandbox: false
   },
   mailer: {
-    from: process.env.MAILER_FROM || 'MAILER_FROM',
+    from: process.env.MAILER_FROM || 'contact@bullesdesoi.fr',
     options: {
       service: process.env.MAILER_SERVICE_PROVIDER || 'MAILER_SERVICE_PROVIDER',
       auth: {

@@ -38,19 +38,19 @@ module.exports = {
     title: defaultEnvConfig.app.title + ' - Development Environment'
   },
   facebook: {
-    clientID: process.env.FACEBOOK_ID || 'APP_ID',
-    clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
+    clientID: process.env.FACEBOOK_ID || '768552639951695',
+    clientSecret: process.env.FACEBOOK_SECRET || '37947b14889e39f5ed24b774dd0c0af5',
     callbackURL: '/api/auth/facebook/callback'
   },
   twitter: {
-    username: '@TWITTER_USERNAME',
-    clientID: process.env.TWITTER_KEY || 'CONSUMER_KEY',
-    clientSecret: process.env.TWITTER_SECRET || 'CONSUMER_SECRET',
-    callbackURL: '/api/auth/twitter/callback'
+    username: 'Sam_sane',
+    clientID: process.env.TWITTER_KEY || '57nhCS84GR44DkWZFKmTq8JKV',
+    clientSecret: process.env.TWITTER_SECRET || 'dEQiWlB8D5JoqAdrkH7rA0dxwV4kNeGI8XUCKUfj0aGwGMwpKt',
+    callbackURL: '/api/auth/twitter/callback' // Il est nécessaire de configurer callbackURL dans la configuration de l'application sur twitter
   },
   google: {
-    clientID: process.env.GOOGLE_ID || 'APP_ID',
-    clientSecret: process.env.GOOGLE_SECRET || 'APP_SECRET',
+    clientID: process.env.GOOGLE_ID || '200872704306-gvnfo6ad60fqjo8nii34npr551fa6pc6.apps.googleusercontent.com',
+    clientSecret: process.env.GOOGLE_SECRET || 'KGN6xGb2C67Gtq4IEEM8m6B8',
     callbackURL: '/api/auth/google/callback'
   },
   linkedin: {
