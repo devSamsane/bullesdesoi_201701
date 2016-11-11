@@ -1,10 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div layout="row" layout="row" layout-align="center center" ng-controller="AuthenticationController as vm">
+    <div flex="100" layout-align="center center">
+        <h3>Connectez-vous via votre réseau social</h3>
+        <md-grid-list
+            md-cols-xs="3" md-cols-sm="4" md-cols-md="5" md-cols-gt-md="5"
+            md-row-height-gt-md="1:1" md-row-height="4:3"
+            md-gutter="4px" md-gutter-gt-md="16px" md-gutter-md="8px">
+            
+            <md-grid-tile class="bds-grid-tile--facebook" ng-click="vm.callOauthProvider('/api/auth/facebook')"
+                          md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
+                <img src="/modules/users/client/img/buttons/facebook.png" class="bds-grid-tile--img">
+<!--                <md-grid-tile-footer>
+                    <h3>Facebook</h3>
+                </md-grid-tile-footer>-->
+            </md-grid-tile>
+            <md-grid-tile class="bds-grid-tile--twitter" ng-click="vm.callOauthProvider('/api/auth/twitter')"
+                          md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
+                <img src="/modules/users/client/img/buttons/twitter.png" class="bds-grid-tile--img">
+<!--                <md-grid-tile-footer>
+                    <h3>Twitter</h3>
+                </md-grid-tile-footer>-->
+            </md-grid-tile>
+            <md-grid-tile class="bds-grid-tile--google" ng-click="vm.callOauthProvider('/api/auth/google')"
+                          md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
+                <img src="/modules/users/client/img/buttons/google.png" class="bds-grid-tile--img">
+<!--                <md-grid-tile-footer>
+                    <h3>Google</h3>
+                </md-grid-tile-footer>-->
+            </md-grid-tile>
+            <md-grid-tile class="bds-grid-tile--linkedin" ng-click="vm.callOauthProvider('/api/auth/linkedin')"
+                          md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
+                <img src="/modules/users/client/img/buttons/linkedin.png" class="bds-grid-tile--img">
+  <!--              <md-grid-tile-footer>
+                <h3>LinkedIn</h3>
+            </md-grid-tile-footer>-->
+            </md-grid-tile>
+            <md-grid-tile class="bds-grid-tile--paypal" ng-click="vm.callOauthProvider('/api/auth/paypal')"
+                          md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
+                <img src="/modules/users/client/img/buttons/paypal.png" class="bds-grid-tile--img">
+<!--                <md-grid-tile-footer>
+                    <h3>Paypal</h3>
+                </md-grid-tile-footer>-->
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
+</div>
+<div ui-view></div>
