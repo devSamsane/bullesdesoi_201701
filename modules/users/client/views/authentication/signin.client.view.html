@@ -2,7 +2,7 @@
     
     <md-input-container class="md-icon-float md-block" show-errors>
         <md-icon md-svg-icon="social:ic_person_24px" class="md-primary"></md-icon>
-        <input ng-model="vm.credentials.usernameOrEmail" type="text" placeholder="Username or Email" id="usernameOrEmail" name="usernameOrEmail" lowercase required autofocus />
+        <input ng-model="vm.credentials.usernameOrEmail" type="text" placeholder="Username or Email" id="usernameOrEmail" name="usernameOrEmail" lowercase required/>
         <div ng-messages="vm.userForm.usernameOrEmail.$error" role="alert">
             <p ng-message="required" class="error-text">Username or Email is required.</p>
         </div>

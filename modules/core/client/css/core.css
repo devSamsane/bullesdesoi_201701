@@ -7,6 +7,10 @@ body {
   max-height: 100%;
 }
 
+.icon-error {
+  height: 50px;
+  width: 50px;
+}
 /* Toolbar */
 
 
@@ -321,7 +325,7 @@ md-button.md-disabled p {
 }
 
 .bds-icon--accent {
-  fill: #CDDC39; /* lime-500 */
+  fill: #CDDC39 !important; /* lime-500 */
 }
 
 .bds-icon--white {
@@ -336,4 +340,25 @@ md-toast.md-error--theme div.md-toast-content {
 md-toast.md-success--theme div.md-toast-content {
   background-color: #CDDC39; /* lime-500 */
   color: #616161; /* grey-700 */
+}
+
+/* Progress bar */
+.bds-progressbar--danger {
+  background-color: #D50000;
+}
+
+.bds-progressbar--warning {
+  background-color: #FF6D00;
+}
+
+.bds-progressbar--info {
+  background-color: #D1C4E9;
+}
+
+.bds-progressbar--primary {
+  background-color: #673AB7;
+}
+
+.bds-progressbar--success {
+  background-color: #AEEA00;
 }

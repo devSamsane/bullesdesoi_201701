@@ -9,7 +9,7 @@
     .module('users.services')
     .factory('PasswordValidator', PasswordValidator);
 
-  PasswordValidator.$inject = ['$window'];
+  PasswordValidator.$inject = ['$window', '$mdToast'];
 
   function PasswordValidator($window) {
     var owaspPasswordStrengthTest = $window.owaspPasswordStrengthTest;

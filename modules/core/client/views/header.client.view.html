@@ -17,14 +17,14 @@
                 </h2>
                 <span flex></span>
                 <div layout="row">
-                    <span ng-bind="vm.authentication.user.displayName"></span>
+                    <p ng-bind="vm.authentication.user.displayName" class="md-subhead"></p>
                     <md-menu md-position-mode="target-right target">
                         <md-button class="md-icon-button" aria-label="signin" ng-click="$mdMenu.open()">
-                            <md-icon md-svg-icon="social:ic_person_24px" ng-class="{'bds-icon--accent' : isDisabled}"></md-icon>
+                            <md-icon md-svg-icon="social:ic_person_24px" ng-class="{'bds-icon--accent' : !isDisabled}"></md-icon>
                         </md-button>
                         <md-menu-content width="4" class="bds-accountMenu--settings">
-                            <md-menu-item ng-repeat="item in vm.accountMenu.items" ui-sref-active="active" ng-if="!isDisabled">
-                                <md-button ng-click="" ng-disabled="isDisabled" aria-label="menu utilisateur">
+                            <md-menu-item ng-repeat="item in vm.accountMenu.items" ui-sref-active="active">
+                                <md-button ng-disabled="isDisabled" aria-label="menu utilisateur">
                                     <div layout="row" flex>
                                         <p flex ui-sref="{{ item.state }}" class="bds-accountMenu--item">{{ item.title }}</p>
                                     </div>
@@ -32,18 +32,18 @@
                             </md-menu-item>
                             <md-menu-divider></md-menu-divider>
                             <md-menu-item ui-sref-active="active">
-                                <md-button ng-click="" ng-disabled="isDisabled" aria-label="prendre rdv">
+                                <md-button ng-disabled="isDisabled" aria-label="prendre rdv">
                                     <p flex ui-sref="rdv" class="bds-accountMenu--item">Prendre rendez-vous</p>
                                 </md-button>
                             </md-menu-item>
                             <md-menu-divider></md-menu-divider>
                             <md-menu-item ui-sref-active="active" ng-hide="vm.authentication.user">
-                                <md-button ng-click="" aria-label="signin">
+                                <md-button aria-label="signin">
                                     <p flex ui-sref="authentication.signin" class="bds-accountMenu--item">Se connecter</p>
                                 </md-button>
                             </md-menu-item>
                             <md-menu-item ng-hide="!vm.authentication.user">
-                                <md-button ng-click="" aria-label="signout">
+                                <md-button aria-label="signout">
                                     <a flex href="/api/auth/signout" target="_self" class="bds-accountMenu--item">Se déconnecter</a>
                                 </md-button>
                             </md-menu-item>
